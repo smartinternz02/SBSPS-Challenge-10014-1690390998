@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Placement Data Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #aaadf6;
+            background-image: url(https://www.satyamcollageofeducation.com/pics/col.jpg) ;
+            box-sizing: border-box;
+            background-size: cover;
+            background-position-x: center;
+            background-position-y: center+;
+            background-repeat: no-repeat;
+        }
+
+        header {
+            background-color: #4c56fc;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 80px;
+            font-family: Algerian;
+        }
+        h2 {
+            font-family: "Lucinda Grande", "Lucinda Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #d2f6ee;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select, input {
+            height: 25px;
+            width: 100%;
+            padding: 1px;
+            margin-bottom: 0px;
+            border: 2px solid #ccc;
+            border-radius: 1px;
+            fontcolor: #66a47a
+        }
+        textarea {
+            width: 100%;
+            color: white;
+        }
+
+        select {
+            height: 30px;
+            bgcolor: #6c9e93;
+        }
+
+        input[type="submit"] {
+            background-color: #32cb53;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-family: Algerian;
+            font-size: 20px;
+            height: 40px;
+        }
+
+        #output-div {
+            margin-top: 10px;
+            margin-bottom: 0px;
+            margin-inline: auto;
+            padding: 10px;
+            background-color: #da6af3;
+            border-radius: 5px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="https://thumbs.dreamstime.com/b/university-academy-school-course-logo-design-template-college-education-book-symbol-graphic-emblem-vector-business-171467813.jpg" alt="university_logo1.jpeg" style="float: left;" height="150px" width="190px">
+    <h1>UNIVERSITY OF MANAGEMENT & BUSINESS</h1>
+    <h2>Placement Data Form</h2>
+</header>
+<div id="container">
+<form action="/input" method="post" onsubmit="updateOutput('{{ Output }}');">
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender">
+        <option value="1">Male</option>
+        <option value="0">Female</option>
+    </select><br><br>
+    <label for="ssc_p">ssc_p:</label>
+    <input type="number" step="any" id="ssc_p" name="ssc_p"><br><br>
+    <label for="ssc_b">ssc_b:</label>
+    <select id="ssc_b" name="ssc_b">
+        <option value="1">Central</option>
+        <option value="0">Others</option>
+    </select><br><br>
+    <label for="hsc_p">hsc_p:</label>
+    <input type="number" step="any" id="hsc_p" name="hsc_p"><br><br>
+    <label for="hsc_b">hsc_b:</label>
+    <select id="hsc_b" name="hsc_b">
+        <option value="1">Central</option>
+        <option value="0">Others</option>
+    </select><br><br>
+    <label for="hsc_s">hsc_s:</label>
+    <select id="hsc_s" name="hsc_s">
+        <option value="1">Science</option>
+        <option value="2">Commerce</option>
+        <option value="3">Arts</option>
+    </select><br><br>
+    <label for="degree_p">degree_p:</label>
+    <input type="number" step="any" id="degree_p" name="degree_p"><br><br>
+    <label for="degree_t">degree_t:</label>
+    <select id="degree_t" name="degree_t">
+        <option value="1">Sci&Tech</option>
+        <option value="2">Comm&Mgmt</option>
+        <option value="3">Others</option>
+    </select><br><br>
+    <label for="workex">workex:</label>
+    <select id="workex" name="workex">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select><br><br>
+    <label for="etest_p">etest_p:</label>
+    <input type="number" step="any" id="etest_p" name="etest_p"><br><br>
+    <label for="specialisation">specialisation:</label>
+    <select id="specialisation" name="specialisation">
+        <option value="1">Mkt&Fin</option>
+        <option value="0">Mkt&HR</option>
+    </select><br><br>
+    <label for="mba_p">mba_p:</label>
+    <input type="number" step="any" id="mba_p" name="mba_p"><br><br>
+    <input type="submit" value="Submit" onclick="onclick="display_response()">
+    <div id="responseContainer"></div>
+</form>
+<div id="output-div">
+    {% if Output %}
+        <h1>Predicted_Placement_Status:{{Output}}</h1>
+
+    {% endif %}
+
+</div>
+</div>
+<footer style="accent-color: ivory; font-size: larger; offset-position: right; color: white; float: right;" ><h3>support line:<br>
+    <link>email:kusumakommu919gmail.com<br>
+    contact:9034562365</h3>
+</footer>
+<script>
+    function updateOutput(output) {
+        document.getElementById('output-div').innerHTML = 'Predicted Placement Status: ' + output;
+    }
+    function display_response() {
+        var inputText=document.getElementById("userInput").value;
+        var responseContainer = document.getElementById("responsContainer");
+        responseContainer.innerHTML="responce_recorded:" + inputText;
+    }
+</script>
+</body>
+</html>
+
