@@ -4,9 +4,13 @@ Identifying Patterns and Trends in Campus Placement Data using Machine Learning
 
 dsibm is the main folder with files:
     app.py
+
     input.html
+    
     placement_data
+    
     placement_data_details(dataset file)
+    
   among these placement_data and dataset are additions as they are already included in ibm watson services deployment project which is connected with app.py
 
 
